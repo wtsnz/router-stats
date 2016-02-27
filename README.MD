@@ -35,3 +35,7 @@ Once you've done that you can execute the script. Make sure you're username and 
     PWR down: 18.6
     done
     $
+
+Now I collect the stats every 10 seconds by running the command above in a simple while loop. I can't think of a better way to do this as crontab only goes down to a minute. (If you have a better idea please open an issue!)
+
+    while true ; do ./stats.py --router 10.0.0.1 --username admin --password password --statsd-server server.com --statsd-port 1234; sleep 10; done
